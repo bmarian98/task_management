@@ -3,12 +3,15 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 //localStorage.setItem('isLoggedIn', false);
 
+const USER_MANAGEMENT_URL = process.env.USER_MANAGEMENT_URL;
+const TASK_MANAGEMENT_URL =  process.env.TASK_MANAGEMENT_URL;
+
 const BACKENDS = {
   flask: {
-    baseUrl: 'http://localhost:5000',  // Replace with your Flask backend URL
+    baseUrl: USER_MANAGEMENT_URL || 'http://localhost:5000',  // Replace with your Flask backend URL
   },
   tasks: {
-    baseUrl: 'http://localhost:5001',  // Replace with your Flask backend URL
+    baseUrl: TASK_MANAGEMENT_URL || 'http://localhost:5001',  // Replace with your Flask backend URL
   },
 //   tasks: {
 //     baseUrl: 'http://localhost:5001',  // Replace with your Flask backend URL

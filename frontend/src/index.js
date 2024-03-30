@@ -4,24 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProtectedRoute from './ProtectedRoute';
-import RegistrationForm from './user_management/RegistrationForm'; // Assuming RegistrationForm.jsx exists
-import Profile from './user_management/Profile'; // Assuming Profile.jsx exists
-import Navbar from  './Navbar';
-import Main from './user_management/Main';
-import Login from './user_management/Login';
-import Logout from './user_management/Logout';
-import UpdateProfileForm from './user_management/UpdateProfileForm';
-import CreateTask from './task_management/TaskForm';
-import AllTasks from './task_management/AllTasks';
-import CurrentUserTasks from './task_management/CurrentUserTasks';
-import TaskView from './task_management/TaskView';
+import ProtectedRoute from './components/ProtectedRoute';
+import RegistrationForm from './components/user_management/RegistrationForm'; 
+import Profile from './components/user_management/Profile'; 
+import Navbar from  './components/Navbar';
+import Main from './components/user_management/Main';
+import Login from './components/user_management/Login';
+import Logout from './components/user_management/Logout';
+import UpdateProfileForm from './components/user_management/UpdateProfileForm';
+import CreateTask from './components/task_management/TaskForm';
+import AllTasks from './components/task_management/AllTasks';
+import CurrentUserTasks from './components/task_management/CurrentUserTasks';
+import TaskView from './components/task_management/TaskView';
+import ShowNavbar from './components/ShowNavbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <App />
-    {window.location.pathname !== '/login' && window.location.pathname !== '/register' && <Navbar />} 
+    {/* {window.location.pathname !== '/login' && window.location.pathname !== '/register' && (<Navbar />)}  */}
+    <ShowNavbar>
+      <Navbar />
+    </ShowNavbar>
     <Routes>
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/login" element={<Login />} />

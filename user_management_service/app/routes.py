@@ -4,9 +4,6 @@ from app.db import User
 from .login_required import token_required
 import jwt
 
-
-
-
 db = User()
 
 @app.route('/')

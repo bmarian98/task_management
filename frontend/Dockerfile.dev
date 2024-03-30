@@ -1,0 +1,19 @@
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Add ENV variables
+ENV USER_MANAGEMENT_URL ${USER_MANAGEMENT_URL}
+ENV TASK_MANAGEMENT_URL ${TASK_MANAGEMENT_URL}
+ENV NODE_ENV development
+
+# Build the React app
+CMD [ "npm", "run" ]

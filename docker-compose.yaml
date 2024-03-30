@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  user_app:
+    # image: user_mgmt
+    build:
+      context: ./user_management_service
+      dockerfile: Dockerfile
+    container_name: user_mgmt
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/mydatabase
+
+  task_app:
+    # image: task_mgmt
+    build:
+      context: ./task_management
+      dockerfile: Dockerfile
+    container_name: task_mgmt
+    restart: always
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/mydatabase
+
+  frontend_app:
+    # image: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: always
+    ports:
+      - "8080:80"
+      # - "8080:3000"
+    depends_on:
+      - user_app
+      - task_app
+    environment:
+      - USER_MANAGEMENT_URL=user_app:5000
+      - TASK_MANAGEMENT_URL=task_app:5000
+
+volumes:
+  mongodb_data:
