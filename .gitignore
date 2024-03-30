@@ -1,0 +1,86 @@
+# Flask specific files
+__pycache__/
+*.pyc
+env.py # Or your specific virtual environment activation file
+
+# Python related files
+*.egg-info/
+dist/
+build/
+wheels/
+parts/
+include/
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.pyd
+
+# IDE or editor files
+*.idea/
+.vscode/
+.pycharm/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+*.prof
+
+# Distribution / packaging
+*.egg
+MANIFEST
+
+# Testing framework (adjust if needed)
+# pytest
+#   .pytest_cache/
+
+# Documentation
+docs/_build/
+
+# Scrapy
+.scrapy
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Virtualenv
+venv/
+ENV/
+
+# Sphinx documentation
+docs/_build/
+
+# Spyder project settings
+.spyderproject/
+
+# Rope project settings
+.ropeproject/
+
+# Dependencies
+node_modules/
+
+# Production build output (adjust if different)
+build/
+
+# npm files
+.npmignore
+package-lock.json  # Or yarn.lock if using yarn
+
+# Testing
+jest/__snapshots__/  # Adjust if using a different testing framework
+
+# Editor preferences
+.vscode/
+.idea/
+
+# Build tools
+.eslintrc.json
+.prettierrc.js  # Adjust for your specific linters/formatters
+
+# Temporary files
+.nyc_output/  # NYC test coverage
+npm-debug.log
+
+# Environment variables
+.env  # Or specific env files (e.g., .env.development, .env.production)

@@ -1,0 +1,8 @@
+Flask
+pymongo
+requests
+gunicorn
+flask-cors
+pyjwt
+bcrypt
+pypillow
