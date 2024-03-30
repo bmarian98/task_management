@@ -1,0 +1,22 @@
+.form-group{
+    margin-bottom: 1rem;
+}
+
+/* .form-control{
+    width: 500px;
+} */
+
+.center-form {
+    display: flex; /* Enables flexbox for centering */
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+    min-height: 90vh; /* Ensures form fills viewport height (optional) */
+}
+
+.form-container {
+    background-color: #f8f9fa; /* Light background color (optional) */
+    padding: 2rem; /* Padding for spacing (optional) */
+    border-radius: 5px; /* Rounded corners (optional) */
+    max-width: 700px; /* Optional maximum width for form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow (optional) */
+}
